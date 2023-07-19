@@ -1,6 +1,7 @@
-from transformers import AutoTokenizer
-import transformers
+# -*- coding: utf-8 -*-
 import torch
+import transformers
+from transformers import AutoTokenizer
 
 
 class Falcon(torch.nn.Module):

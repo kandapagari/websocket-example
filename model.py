@@ -1,9 +1,10 @@
-from transformers import DPTImageProcessor, DPTForDepthEstimation
-import torch
+# -*- coding: utf-8 -*-
 import numpy as np
-from PIL import Image
 import requests
+import torch
+from PIL import Image
 from torch import nn
+from transformers import DPTForDepthEstimation, DPTImageProcessor
 
 
 class DepthEstimator(nn.Module):

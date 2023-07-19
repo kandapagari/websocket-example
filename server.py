@@ -1,11 +1,13 @@
+# -*- coding: utf-8 -*-
 import asyncio
 import base64
 import time
 from io import BytesIO
 
 import websockets
-from model import DepthEstimator
 from PIL import Image
+
+from model import DepthEstimator
 
 PORT = 7890  # Port to listen on
 

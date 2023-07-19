@@ -1,7 +1,8 @@
+# -*- coding: utf-8 -*-
 import asyncio
 import base64
-from io import BytesIO
 import time
+from io import BytesIO
 
 import requests
 import websockets

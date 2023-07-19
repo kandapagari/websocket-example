@@ -1,7 +1,9 @@
 accelerate
 einops
+requests
 scipy
 torch
 torchvision
 transformers
+types-requests
 websockets
