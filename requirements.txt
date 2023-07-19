@@ -1,3 +1,6 @@
+accelerate
+einops
+scipy
 torch
 torchvision
 transformers
