@@ -1,7 +1,8 @@
-from transformers import AutoProcessor, AutoModelForCausalLM
+# -*- coding: utf-8 -*-
 import requests
-from PIL import Image
 import torch
+from PIL import Image
+from transformers import AutoModelForCausalLM, AutoProcessor
 
 
 class GIT(torch.nn.Module):
