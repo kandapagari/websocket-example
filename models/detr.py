@@ -7,12 +7,13 @@ from transformers import DetrForObjectDetection, DetrImageProcessor
 
 class Detr(torch.nn.Module):
 
-    def __init__(self, *args, **kwargs) -> None:
+    def __init__(self,
+                 *args,
+                 model_name="facebook/detr-resnet-50",
+                 **kwargs) -> None:
         super().__init__(*args, **kwargs)
-        self.processor = DetrImageProcessor.from_pretrained(
-            "facebook/detr-resnet-50")
-        self.model = DetrForObjectDetection.from_pretrained(
-            "facebook/detr-resnet-50")
+        self.processor = DetrImageProcessor.from_pretrained(model_name)
+        self.model = DetrForObjectDetection.from_pretrained(model_name)
 
     def forward(self, image):
         inputs = self.processor(images=image, return_tensors="pt")
@@ -34,6 +35,11 @@ class Detr(torch.nn.Module):
 
 if __name__ == "__main__":
     detr = Detr()
+
+    url = "http://images.cocodataset.org/val2017/000000039769.jpg"
+    image = Image.open(requests.get(url, stream=True).raw)
+    detr.forward(image)
+    detr = Detr(model_name="facebook/detr-resnet-101")
 
     url = "http://images.cocodataset.org/val2017/000000039769.jpg"
     image = Image.open(requests.get(url, stream=True).raw)
