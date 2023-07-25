@@ -1,5 +1,7 @@
+-f https://shi-labs.com/natten/wheels/cu118/torch2.0.0/index.html
 accelerate
 einops
+natten
 requests
 scipy
 torch
