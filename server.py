@@ -7,7 +7,7 @@ from io import BytesIO
 import websockets
 from PIL import Image
 
-from models.depth_estimator import DepthEstimator
+from models import DepthEstimator
 
 PORT = 7890  # Port to listen on
 
