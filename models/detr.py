@@ -31,6 +31,7 @@ class Detr(torch.nn.Module):
             print(
                 f"Detected {self.model.config.id2label[label.item()]} with confidence "
                 f"{round(score.item(), 3)} at location {box}")
+        return results
 
 
 if __name__ == "__main__":
