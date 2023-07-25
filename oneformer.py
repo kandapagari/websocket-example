@@ -28,7 +28,7 @@ class OneFormer(torch.nn.Module):
 
     @property
     def labels(self):
-        return open("coco-labels-2014_2017.txt").read().splitlines()
+        return open("assets/coco-labels-2014_2017.txt").read().splitlines()
 
     def forward(self, image, task: TaskInput = TaskInput.instance):
         inputs = self.processor(images=image,

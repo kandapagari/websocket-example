@@ -17,7 +17,7 @@ class Mask2Former(torch.nn.Module):
 
     @property
     def labels(self):
-        return open("coco-labels-2014_2017.txt").read().splitlines()
+        return open("assets/coco-labels-2014_2017.txt").read().splitlines()
 
     def forward(self, image):
         inputs = self.processor(images=image, return_tensors="pt")
