@@ -4,6 +4,7 @@ einops
 natten
 requests
 scipy
+timm
 torch
 torchvision
 transformers
