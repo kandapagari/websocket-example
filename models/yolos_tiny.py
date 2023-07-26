@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+import time
+
 import requests
 import torch
 from PIL import Image
@@ -36,4 +38,6 @@ if __name__ == "__main__":
     yolos = YoloTiny()
     url = "http://images.cocodataset.org/val2017/000000039769.jpg"
     image = Image.open(requests.get(url, stream=True).raw)
+    ts = time.perf_counter()
     yolos.forward(image)
+    print(f"Time: {time.perf_counter() - ts}")
