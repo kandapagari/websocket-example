@@ -5,7 +5,7 @@ from PIL import Image
 from transformers import OwlViTForObjectDetection, OwlViTProcessor
 
 
-class OwlVit(torch.nn.Module):
+class OwlViT(torch.nn.Module):
     def __init__(self, *args, **kwargs) -> None:
         super().__init__(*args, **kwargs)
         self.processor = OwlViTProcessor.from_pretrained("google/owlvit-base-patch32")
@@ -27,11 +27,11 @@ class OwlVit(torch.nn.Module):
 
 
 if __name__ == "__main__":
-    model = OwlVit()
+    owl_vit_model = OwlViT()
     url = "http://images.cocodataset.org/test2017/000000000674.jpg"
     image = Image.open(requests.get(url, stream=True).raw)
     texts = [["person", "red dress"]]
-    results = model.forward(image, texts, threshold=0.25)
+    results = owl_vit_model.forward(image, texts, threshold=0.25)
     i = 0  # Retrieve predictions for the first image for the corresponding text queries
     text = texts[i]
     boxes, scores, labels = (
