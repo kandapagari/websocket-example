@@ -20,9 +20,9 @@ class GIT(torch.nn.Module):
 
         generated_ids = self.model.generate(pixel_values=pixel_values,
                                             max_length=50)
-        generated_caption = self.processor.batch_decode(
-            generated_ids, skip_special_tokens=True)[0]
-        return generated_caption
+        return self.processor.batch_decode(
+            generated_ids, skip_special_tokens=True
+        )[0]
 
     def dry_run(self):
         url = "http://images.cocodataset.org/test2017/000000581864.jpg"
