@@ -24,14 +24,13 @@ class Mask2Former(torch.nn.Module):
         with torch.no_grad():
             outputs = self.model(**inputs)
 
-        result = self.processor.post_process_instance_segmentation(
+        return self.processor.post_process_instance_segmentation(
             outputs,
             overlap_mask_area_threshold=0.9,
             mask_threshold=0.9,
             threshold=0.95,
-            target_sizes=[image.size[::-1]])[0]
-
-        return result
+            target_sizes=[image.size[::-1]],
+        )[0]
 
 
 if __name__ == "__main__":
