@@ -26,10 +26,7 @@ class Falcon(torch.nn.Module):
             num_return_sequences=1,
             eos_token_id=self.tokenizer.eos_token_id,
         )
-        results = ''
-        for seq in sequences:
-            results += seq['generated_text']
-        return results
+        return ''.join(seq['generated_text'] for seq in sequences)
 
     def dry_run(self):
         results = self.forward("Write a poem about Valencia.")
