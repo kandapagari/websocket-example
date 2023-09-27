@@ -16,7 +16,7 @@ conntected = set()
 
 
 async def echo(websocket, path):
-    print("A New connection extablished")
+    print("A New connection established")
     conntected.add(websocket)
     try:
         async for message in websocket:
@@ -31,7 +31,7 @@ async def echo(websocket, path):
 
 
 async def dry_run(websocket, path):
-    print("A New connection extablished")
+    print("A New connection established")
     conntected.add(websocket)
     try:
         async for message in websocket:
@@ -46,7 +46,7 @@ async def dry_run(websocket, path):
 
 
 async def predict(websocket, path):
-    print("A New connection extablished")
+    print("A New connection established")
     conntected.add(websocket)
     try:
         async for message in websocket:
