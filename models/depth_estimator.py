@@ -32,8 +32,7 @@ class DepthEstimator(nn.Module):
         # visualize the prediction
         output = prediction.squeeze().cpu().numpy()
         formatted = (output * 255 / np.max(output)).astype("uint8")
-        depth = Image.fromarray(formatted)
-        return depth
+        return Image.fromarray(formatted)
 
     def dry_run(self):
         url = "http://images.cocodataset.org/val2017/000000039769.jpg"
