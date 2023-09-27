@@ -37,10 +37,9 @@ class OneFormer(torch.nn.Module):
         with torch.no_grad():
             outputs = self.model(**inputs)
 
-        result = self.func_map[task.value](outputs,
-                                           target_sizes=[image.size[::-1]])[0]
-
-        return result
+        return self.func_map[task.value](outputs, target_sizes=[image.size[::-1]])[
+            0
+        ]
 
 
 if __name__ == "__main__":
